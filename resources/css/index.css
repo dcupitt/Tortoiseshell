@@ -1,4 +1,5 @@
-html {
+html,
+p {
   font-size: 18px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
@@ -9,8 +10,8 @@ html {
   width: 100%;
 }
 
-.header,
-.infotop {
+.navbar,
+.infotop p {
   background-color: cadetblue;
   color: white;
 }
@@ -20,7 +21,16 @@ html {
   margin: 0 auto;
 }
 
-.header {
+.flex {
+  display: flex;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,13 +41,16 @@ html {
   display: flex;
   align-items: center;
 }
-.nav {
+nav {
   display: inline-block;
   padding-right: 1rem;
 }
 
+nav li {
+}
+
 .logo,
-.nav li {
+nav li {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -55,11 +68,12 @@ li {
   display: inline-block;
   padding-left: 1rem;
   padding-right: 1rem;
+  height: 100%;
 }
 
 /* Banner styling */
 
-.banner {
+header {
   height: 31rem;
   background-image: url("../../resources/images/glasses-bg.png");
   background-position: center;
@@ -68,13 +82,19 @@ li {
   padding-top: 1rem;
 }
 
-.banner .container {
-
-}
-
 .bannertext {
-
+  display: inline-block;
+  background-color: white;
+  padding: 1.5rem 5rem;
+  margin-top: 10rem;
+  margin-right: -2rem;
+  line-height: 1.2;
 }
+
+header .flex {
+  justify-content: flex-end;
+}
+
 
 /* Navbar styling */
 ul {
@@ -89,46 +109,58 @@ ul {
 
 }
 
-/* Products styling */
-.items {
+/* Value Props styling */
+.valueprops {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.items {
+
 }
 
 .prop {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 30%;
-  height: auto;
-}
-
-.propicon {
-
-}
-
-.propname {
-  max-width: 5rem;
+  width: 5rem;
+  height: 8rem;
   text-align: center;
+  margin: 3rem;
+}
+
+#paper {
+  width: 3.5rem;
+}
+
+#ruler,
+#truck {
+  width: 5rem;
 }
 
 /* Location styling */
 .information {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .info {
-
+  width: 35%;
+  margin-right: 5%;
+  margin-bottom: 5rem;
 }
 
-.infotop {
+.infotop p {
   width: 10rem;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .infobottom {
-  width: 35%;
+
 }
 
 /* Footer styling */
@@ -159,7 +191,7 @@ a {
 }
 
 li:hover {
-  background-color: DarkCyan;
+  border-bottom: 2px solid white;
 }
 
 /* Media queries */
