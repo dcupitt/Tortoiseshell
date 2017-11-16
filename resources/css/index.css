@@ -10,6 +10,16 @@ p {
   width: 100%;
 }
 
+header {
+  height: 31rem;
+  width: auto;
+  background-image: url("../../resources/images/glasses-bg.png");
+  background-position: 30%;
+  background-size: cover;
+  padding-top: 1rem;
+  display: block;
+}
+
 .navbar,
 .infotop p {
   background-color: cadetblue;
@@ -19,15 +29,6 @@ p {
 .container {
   width: 960px;
   margin: 0 auto;
-}
-
-.flex {
-  display: flex;
-}
-
-.navbar .flex {
-  justify-content: space-between;
-  align-items: center;
 }
 
 .navbar {
@@ -46,8 +47,6 @@ nav {
   padding-right: 1rem;
 }
 
-nav li {
-}
 
 .logo,
 nav li {
@@ -72,17 +71,12 @@ li {
 }
 
 /* Banner styling */
-
-header {
-  height: 31rem;
-  background-image: url("../../resources/images/glasses-bg.png");
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  padding-top: 1rem;
+.bannertext {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.bannertext {
+.bannertext h1 {
   display: inline-block;
   background-color: white;
   padding: 1.5rem 5rem;
@@ -90,11 +84,6 @@ header {
   margin-right: -2rem;
   line-height: 1.2;
 }
-
-header .flex {
-  justify-content: flex-end;
-}
-
 
 /* Navbar styling */
 ul {
@@ -113,10 +102,6 @@ ul {
 .valueprops {
   display: flex;
   justify-content: center;
-}
-
-.items {
-
 }
 
 .prop {
@@ -159,15 +144,17 @@ ul {
   text-transform: uppercase;
 }
 
-.infobottom {
-
-}
-
 /* Footer styling */
 .footer {
-  height: 5rem;
   display: flex;
   align-items: center;
+  background-color: azure;
+  padding: 4rem;
+}
+
+.footer img {
+  height: 1.5rem;
+  padding-right: 1rem;
 }
 
 /* Font styling */
@@ -195,20 +182,122 @@ li:hover {
 }
 
 /* Media queries */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
+  /* computer screens > 1024px */
   .mobile {
     display: none;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  /* tablet screens */
+@media only screen and (max-width: 1024px) and (min-width: 960px) {
+  /* tablet screens < 1024px > 960px*/
+  .mobile {
+    display: none;
+  }
+  header {
+    padding-top: 0;
+    height: 22rem;
+  }
+}
+
+@media only screen and (max-width: 960px) and (min-width: 645px){
+  /* mobile screens <960px*/
+  .mobile {
+    display: none;
+  }
+  header {
+    padding-top: 0;
+    height: 22rem;
+    background-position: 20%;
+  }
+  .container {
+    width: 100%;
+  }
+  .bannertext h1 {
+    font-size: 1.33rem;
+    padding: 0.75rem 4rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
+
+}
+
+@media only screen and (max-width: 644px) {
+  /* mobile screens <470px*/
+  header {
+    padding-top: 0;
+    height: 17rem;
+    background-position: 20%;
+  }
+  /* nav */
   .desktop {
+    display: none;
+  }
+  .container,
+  .bannertext,
+  .valueprops,
+  .information,
+  .info,
+  .infotop p,
+  .footer {
+    width: 100%;
+  }
+  .bannertext {
+    justify-content: center;
+  }
+
+  .bannertext h1 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 9rem;
+    margin-right: 0;
+    width: 100%;
+  }
+  /* value props */
+  .valueprops,
+  .information {
+    flex-direction: column;
+    align-items: center;
+  }
+  .valueprops {
+    padding: 3.77rem 0;
+  }
+  .prop {
+    margin: 0;
+  }
+  #ruler,
+  #truck {
+    padding-top: 1.54rem;
+  }
+  .info {
+    margin-bottom: 4rem;
+    margin-right: 0;
+  }
+
+  .infotop p {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .infobottom p {
+    padding: 0 1rem;
+    font-size: 0.77rem;
+  }
+  .footer {
+    padding: 4rem 0;
+    justify-content: center;
+  }
+  .footer p {
     display: none;
   }
 }
 
-@media only screen and (max-width: 470px) {
-  /* mobile screens */
-
+@media only screen and (max-width: 430px) {
+  /* mobile screens <470px*/
+  .logo span {
+    display: none;
+  }
 }
